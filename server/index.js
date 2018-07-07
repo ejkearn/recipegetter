@@ -12,7 +12,7 @@ var port = 3000
 require('./db')
 
 
-var whitelist = ['http://localhost:8080',]
+var whitelist = ['http://localhost:8080','https://foodiemcfoodface.herokuapp.com']
 var corsOptions = {
   origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
@@ -22,6 +22,7 @@ var corsOptions = {
 };
 app.use(cors(corsOptions))
 
+app.use(express.static(__dirname+"/../www/dist"))
 //REGISTER MIDDLEWEAR
 app.use(bp.json())
 app.use(bp.urlencoded({ 
