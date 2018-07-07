@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <br>
+
     <br>
     <br>
     <br>
