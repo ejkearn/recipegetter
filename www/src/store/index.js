@@ -160,6 +160,9 @@ export default new vuex.Store({
                 commit('setRecipes', recipes)
                 router.push({name: 'GeneralSearchResults'})
             })
+            .catch(res => {
+                console.log(res.data)
+            })
         },
         setRecipeDetails({dispatch, commit, state}, id){
             recipeDetailsSearch.get(id + '/information')
@@ -174,6 +177,9 @@ export default new vuex.Store({
                 recipe.ingredients = recipeDeets.data.extendedIngredients,
                 recipe.spoonId = recipeDeets.data.id
                 commit('setActiveRecipe', recipe)
+            })
+            .catch(res => {
+                console.log(res.data)
             })
         },
         getRecipeDetails({dispatch, commit}, id){
@@ -190,7 +196,9 @@ export default new vuex.Store({
                 recipe.spoonId = res.data.id
                 console.log(recipe)
                 commit('setActiveRecipe', recipe)
-                
+            })
+            .catch(res => {
+                console.log(res.data)
             })
         },
     
@@ -202,6 +210,9 @@ export default new vuex.Store({
                     commit('setUser', res.data)
                     router.push({ name: 'Home' })
                 })
+                .catch(res => {
+                    console.log(res.data)
+                })
         },
         logout({ commit, dispatch }) {
             auth.delete('/logout')
@@ -210,6 +221,9 @@ export default new vuex.Store({
                     commit('deleteUser')
                     //   router.push({name: 'Login'})
                 })
+                .catch(res => {
+                    console.log(res.data)
+                })
         },
         register({ commit, dispatch }, userData) {
             auth.post('/register', userData)
@@ -217,12 +231,18 @@ export default new vuex.Store({
                     console.log("Registration Successful")
                     router.push({ name: 'Home' }) // I changed this to just change the component 
                 })
+                .catch(res => {
+                    console.log(res.data)
+                })
         },
         authenticate({ commit, dispatch }) {
             api.get('/authenticate')
                 .then(res => {
                     commit('setUser', res.data)
                     // router.push({ name: 'Home' })
+                })
+                .catch(res => {
+                    console.log(res.data)
                 })
                 .catch(res => {
                     console.log(res.data)
@@ -248,6 +268,9 @@ export default new vuex.Store({
             .then(res=>{
             commit ('setFavorites', res.data)
             })
+            .catch(res => {
+                console.log(res.data)
+            })
         },
         getFavorites({commit, dispatch, state}){
             api.get('/favorites')
@@ -255,11 +278,17 @@ export default new vuex.Store({
                 console.log(res)
                 commit ('setFavorites', res.data.favorites)
             })
+            .catch(res => {
+                console.log(res.data)
+            })
         },
         addToGroceryList({commit, dispatch, state}, groceryItems){
             api.put('/api/grocLists/'+state.activeGroceryList._id, groceryItems)
             .then(res=>{
             commit ('setGroceryList', res.data)
+            })
+            .catch(res => {
+                console.log(res.data)
             })
         },
         addGroceryList({commit, dispatch, state}, newTitle){
@@ -269,12 +298,18 @@ export default new vuex.Store({
             .then(res=>{
                 commit('setGroceryList', res.data)
             })
+            .catch(res => {
+                console.log(res.data)
+            })
         },
         getGroceryList({commit,dispatch, state}){
             api.get('/api/grocLists/'+ state.user._id)
             .then(res=>{
                 console.log(res)
                 commit('setGroceryList',res.data)
+            })
+            .catch(res => {
+                console.log(res.data)
             })
         },
         setActiveGroceryList({commit, dispatch}, groceryList){
@@ -293,11 +328,17 @@ export default new vuex.Store({
             .then(res => {
               dispatch('getFavorites')
             })
+            .catch(res => {
+                console.log(res.data)
+            })
           },
           deleteList ({ commit, dispatch }, id) {
             api.delete('/grocLists/'+ id)
             .then(res => {
               dispatch('getGroceryList')
+            })
+            .catch(res => {
+                console.log(res.data)
             })
           },
                   // Calender Stuff +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
