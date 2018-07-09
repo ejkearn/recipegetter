@@ -1,13 +1,8 @@
 <template>
   <div class="text-center">
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
+<div class="mt-5 pt-5 row">
+  <div class="col">
     <v-calendar :attributes='attributes'>
       <!--=========DAY POPOVER HEADER SLOT=========-->
       <div slot='day-popover-header' slot-scope='{ day }' class='popover-header'>
@@ -50,11 +45,22 @@
       </div>
       <!--================ADD TODO ROW SLOT===============-->
       <div slot='add-todo' slot-scope='{ day }' class='add-todo'>
-        <a @click='addTodo(day)'>
+        <!-- <a @click='addTodo(day)'>
           + Add Todo
-        </a>
+        </a> -->
       </div>
     </v-calendar>
+  </div>
+  <div class="col">
+    <!-- add tp calendar -->
+    
+    <form @submit.prevent="addCalItem">
+        <input type="date" v-model="newDate">
+        <input type="text" v-model="CalItem">
+        <button class="btn btn-info" type="submit">add to cal</button>
+      </form>
+  </div>
+  </div>
     
   </div>
 </template>
@@ -68,14 +74,22 @@
 
   export default {
     mounted() {
-      this.getCalItems()
+      this.getCalItems(),
+      this.newItem.UserId = this.currentUser._id
     },
     data() {
       return {
+        CalItem: '',
+        newDate: new Date(),
         incId: todos.length,
         editId: 0,
         todos,
-        calUpdate: false
+        calUpdate: false,
+        newItem: {
+          description: 'New todo',
+          isComplete: false,
+          UserId: ''
+        }
       };
     },
     computed: {
@@ -176,6 +190,14 @@
         this.addCalItem(newTodo)
         
         this.todos.push(newTodo);
+      },
+      addCalItem() {
+        var dateArr = this.newDate.split("-")
+        this.newItem.dates = new Date(Number(dateArr[0]), Number(dateArr[1])-1, Number(dateArr[2]))
+        this.newItem.description = this.CalItem
+        console.log(dateArr)
+        this.$store.dispatch('addCalItem', this.newItem)
+        alert("Added to Calendar")
       },
     },
     directives: {
