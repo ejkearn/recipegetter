@@ -70,7 +70,7 @@ this.$store.dispatch('authenticate')
 
 </script>
 
-<style>
+<style scoped>
 p{
         cursor: pointer;
         color: blue;

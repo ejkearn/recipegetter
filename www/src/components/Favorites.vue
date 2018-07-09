@@ -38,7 +38,7 @@
 
 </script>
 
-<style>
+<style scoped>
   ul {
     list-style: none
   }

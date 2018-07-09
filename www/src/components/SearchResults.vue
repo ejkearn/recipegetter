@@ -29,7 +29,7 @@
 
 </script>
 
-<style>
+<style scoped>
   @media only screen and (min-device-width:415px) {
 
     #background {
