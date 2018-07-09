@@ -1,5 +1,5 @@
 var router = require('express').Router()
-var CalItems = require('../models/calItem')
+var CalItems = require('../models/calitem')
 
 //GET ALL
 router.get('/api/cal/:id', (req, res, next) => {
