@@ -12,7 +12,7 @@ var port = process.env.PORT || 3000
 require('./db')
 
 
-var whitelist = ['http://localhost:8080','https://foodiemcfoodface.herokuapp.com', 'https://herokuapp.com', 'https://heroku.com']
+var whitelist = ['http://localhost:8080','https://foodiemcfoodface.herokuapp.com', 'https://herokuapp.com', 'https://heroku.com'];
 var corsOptions = {
   origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
