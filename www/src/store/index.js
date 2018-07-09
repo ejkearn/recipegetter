@@ -2,10 +2,10 @@ import vue from 'vue'
 import vuex from 'vuex'
 import axios from 'axios'
 import router from "../router"
-import Buefy from 'buefy'
-import 'buefy/lib/buefy.css'
 import VCalendar from 'v-calendar';
 import 'v-calendar/lib/v-calendar.min.css';
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
 
 vue.use(Buefy)
 
