@@ -17,7 +17,7 @@ vue.use(VCalendar, {
   });
 
 var production = !window.location.host.includes('localhost');
-var baseUrl = production ? '//herokuapp.com/' : '//localhost:3000';
+var baseUrl = production ? '//foodiemcfoodface.herokuapp.com' : '//localhost:3000';
 var foodApi = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes'
 
 var genRecipeSearch = axios.create({
