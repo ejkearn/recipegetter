@@ -7,6 +7,7 @@ import 'v-calendar/lib/v-calendar.min.css';
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 
+
 vue.use(Buefy)
 
 vue.use(vuex)
