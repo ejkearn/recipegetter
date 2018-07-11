@@ -5,7 +5,7 @@
           <input type="text" v-model="newTitle">
         <button type="submit">Create New</button>
         </form>
-        <!-- <button @click="getGroceryList">Get</button> -->
+        <button @click="getGroceryList">Get</button>
         
       </div>   
       <div v-for="list in GroceryList">
@@ -17,7 +17,7 @@
       </div> 
       <h2 class="h4">{{activeGroceryList.title}}</h2>
       <ul>
-          <li v-for="item in activeGroceryList.items" class="alert alert-dark">
+        <li v-for="item in activeGroceryList.items" class="alert alert-dark">
           {{item}}
         </li>
   
