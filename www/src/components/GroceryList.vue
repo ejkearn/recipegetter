@@ -1,24 +1,30 @@
 <template>
-  <div class="groceryList mt-5 pt-5">
-    <div><br><br><br><br><br><br>      
-      <form @submit.prevent="addGroceryList">
-        <input type="text" v-model="newTitle">
-      <button type="submit">Create New</button>
-      </form>
-      <button @click="getGroceryList">Get</button>
-      {{ActiveGroceryList}}
-    </div>   
-    <div v-for="list in GroceryList">
-      {{list.title}}
-      <button @click="setActiveGroceryList(list)">Add to this list</button>
-      <button @click="deleteList(list._id)">Delete</button>
-    </div> 
-    <!-- <div v-for="item in ActiveGroceryList"> -->
-      
-    <!-- </div> -->
-
-  </div>
-</template>
+    <div class="groceryList">
+      <div><br><br><br><br><br><br>      
+        <form @submit.prevent="addGroceryList">
+          <input type="text" v-model="newTitle">
+        <button type="submit">Create New</button>
+        </form>
+        <!-- <button @click="getGroceryList">Get</button> -->
+        
+      </div>   
+      <div v-for="list in GroceryList">
+        <h1 class="h2">
+          {{list.title}}
+        </h1>
+        <button @click="setActiveGroceryList(list)">Add to this list</button>
+        <button @click="deleteList(list._id)">Delete</button>
+      </div> 
+      <h2 class="h4">{{activeGroceryList.title}}</h2>
+      <ul>
+          <li v-for="item in activeGroceryList.items" class="alert alert-dark">
+          {{item}}
+        </li>
+  
+      </ul>
+  
+    </div>
+  </template>
 
 <script>
   export default {
