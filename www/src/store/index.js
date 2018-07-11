@@ -68,7 +68,7 @@ export default new vuex.Store({
         favorites: [],
         pantry: [],
         calItems:[],
-        activeGroceryList:{}
+        ActiveGroceryList:{}
     
     },
     mutations: {
@@ -103,7 +103,7 @@ export default new vuex.Store({
             state.calItems = calitems
         },
         setActiveGroceryList(state, List){
-            state.activeGroceryList = List
+            state.ActiveGroceryList = List
         }
         
     },

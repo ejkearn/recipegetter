@@ -1,6 +1,7 @@
 <template>
     <div class="favorites">
-      <h1 class="mt-5 h1">My favorites</h1>
+      <br>
+      <h1 class="mt-5 h1 alert alert-dark">My favorites</h1>
           <div class="card-columns">
               <div v-for="fav in favorites">
                 <div class="card col-6">

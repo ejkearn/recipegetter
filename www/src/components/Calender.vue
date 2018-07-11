@@ -50,8 +50,7 @@
         </a> -->
       </div>
     </v-calendar>
-  </div>
-  <div class="col">
+
     <!-- add tp calendar -->
     
     <form @submit.prevent="addCalItem">

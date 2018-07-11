@@ -1,20 +1,18 @@
 <template>
-    <div class="container-fluid" id="background">
-      <div class="row">
-        <div class="col">
-          <Calender></Calender>
-        </div>
-
-        <div class="col">
-          <favorites></favorites>
-        </div>
-          <div class="col">
-            <groceryList></groceryList>
-
-          </div>
-        </div>
+  <div class="container-fluid" id="background">
+    <div class="row">
+      <div class="col">
+        <Calender></Calender>
+      </div>
+      <div class="col">
+        <favorites></favorites>
+      </div>
+      <div class="col">
+        <groceryList></groceryList>
+      </div>
     </div>
-  </template>
+  </div>
+</template>
 
 <script>
   import groceryList from './GroceryList'
@@ -46,6 +44,4 @@
     background-attachment: fixed;
     height: 100vh;
   }
-
-
 </style>
