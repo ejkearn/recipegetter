@@ -4,10 +4,15 @@
         <div class="col">
           <Calender></Calender>
         </div>
-        <div class="col"></div>
-        <favorites></favorites>
-        <groceryList></groceryList>
-      </div>
+
+        <div class="col">
+          <favorites></favorites>
+        </div>
+          <div class="col">
+            <groceryList></groceryList>
+
+          </div>
+        </div>
     </div>
   </template>
 
