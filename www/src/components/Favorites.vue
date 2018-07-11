@@ -1,19 +1,19 @@
 <template>
-  <div class="favorites">
-    <h1 class="mt-5 h1">My favorites</h1>
-        <div class="card-columns">
-            <div v-for="fav in favorites">
-              <div class="card col-6">
-                <img class="card-img-top" :src="fav.image">
-                <router-link :to="{name: 'RecipeDetails', params:{spoonId: fav.spoonId}}">
-                  <h1 class="card-title titles">{{fav.title}}</h1>
-                </router-link>
-                <button @click="deleteFavorite(fav._id)">Delete</button>
+    <div class="favorites">
+      <h1 class="mt-5 h1">My favorites</h1>
+          <div class="card-columns">
+              <div v-for="fav in favorites">
+                <div class="card col-6">
+                  <img class="card-img-top" :src="fav.image">
+                  <router-link :to="{name: 'RecipeDetails', params:{spoonId: fav.spoonId}}">
+                    <h1 class="card-title titles">{{fav.title}}</h1>
+                  </router-link>
+                  <button @click="deleteFavorite(fav._id)">Delete</button>
+                </div>
               </div>
             </div>
-          </div>
-  </div>
-</template>
+    </div>
+  </template>
 
 <script>
   export default {

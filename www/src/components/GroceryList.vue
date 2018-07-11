@@ -1,6 +1,6 @@
 <template>
     <div class="groceryList">
-      <div><br><br><br><br><br><br>      
+      <div><br><br><br><br><br><br>
         <form @submit.prevent="addGroceryList">
           <input type="text" v-model="newTitle">
         <button type="submit">Create New</button>
