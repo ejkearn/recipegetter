@@ -284,7 +284,7 @@ export default new vuex.Store({
             })
         },
         addToGroceryList({commit, dispatch, state}, groceryItems){
-            api.put('/api/grocLists/'+state.activeGroceryList._id, groceryItems)
+            api.put('/api/grocLists/'+state.ActiveGroceryList._id, groceryItems)
             .then(res=>{
             commit ('setGroceryList', res.data)
             })

@@ -5,6 +5,7 @@
       <div class="card text-white bg-warning mb-3 col-6">
         <h1>{{activeRecipe.title}}</h1>
         <img class="card-img-top" :src="activeRecipe.image">
+        
         <div v-if="currentUser._id">
       <button class="btn btn-success" @click="addToFavorites">Favorite</button>
       <!-- <button class="btn btn-success" @click="addToFavorites" disabled v-if="currentUser.favorites.includes(activeRecipe._id)">Favorite</button> -->
@@ -58,7 +59,7 @@
         return this.$store.state.user
       },
       activeGroceryList(){
-        return this.$store.state.activeGroceryList
+        return this.$store.state.ActiveGroceryList
       }
     },
     methods: {
